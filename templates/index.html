@@ -112,12 +112,13 @@
         }
         async function sendMessage() {
             const inputElement = document.getElementById('input-message');
-            const message = inputElement.value.replace(/(?:\r\n|\r|\n)/g, ' <br> ');
+            const message = inputElement.value;
+            const message2 = message.replace(/(?:\r\n|\r|\n)/g, ' <br> ');
             inputElement.value = '';
 
             // Display the user's message
             const chatMessages = document.getElementById('chat-messages');
-            chatMessages.innerHTML += `<div class="message">User: ${message}</div>`;
+            chatMessages.innerHTML += `<div class="message">User: ${message2}</div>`;
 
             // Display loading message with typewriter effect
             let loadingMessage = 'Nexa: Loading';
